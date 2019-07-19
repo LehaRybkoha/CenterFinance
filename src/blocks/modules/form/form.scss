@@ -1,0 +1,70 @@
+.section__form {
+	margin: rem(40px) 0 0 0;
+}
+
+.form {
+	padding: 0;
+	white-space: nowrap;
+	@include xs(margin-left, rem(23.3px));
+	position: relative;
+	&-wrapper {
+		position: relative;
+		height: 80px;
+	}
+}
+
+.submit {
+	display: inline-block;
+	position: absolute;
+	color: #fff;
+	background-color: $main-color;
+	font-family: $font-family-sf;
+	font-weight: 600;
+	font-size: rem(16px);
+	padding: rem(11.5px) rem(40px);
+	border-radius: 4px;
+	margin-left: -10px;
+	&:hover {
+		background-color: green;
+	};
+}
+
+.search {
+	display: inline-block;
+	color: $font-color;
+	font-size: rem(16px);
+	font-weight: 300;
+	font-family: $font-family-sf;
+	min-width: rem(330px);
+	min-height: rem(46px);
+	border: 1px solid $search-color;
+    padding-left: rem(20px);
+	border-radius: 5px;
+	@include xs(min-width, rem(280px));
+	@include md(min-width, rem(330px));
+	&::-webkit-search-cancel-button {
+		-webkit-appearance: none;
+		// width: 15px;
+		// height: 15px;
+		// background: url(/img/sprites/intermediate-svg/cancel.svg) no-repeat;
+		// position: absolute;
+		// top: 40px;
+
+	};
+}
+
+.reset {
+	background: none;
+	color: $reset-color;
+	position: absolute;
+	left: 0;
+	top: 55px;
+	text-transform: lowercase;
+	&:focus {
+		outline: none;
+	};
+}
+
+input.search::placeholder {
+	color: $search-color;
+};

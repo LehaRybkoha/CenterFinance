@@ -1,0 +1,35 @@
+@font-face {
+  font-family: 'SF Pro Display';
+  font-style: normal;
+  font-weight: 300;
+  src: local('SFProDisplay-Light'), local('SFProDisplay-Light'),
+       url('../../fonts/SFProDisplay-Light.woff') format('woff'), /* Modern Browsers */
+}
+@font-face {
+  font-family: 'SF Pro Display';
+  font-style: normal;
+  font-weight: italic;
+  src: local('SFProDisplay-LightItalic'), local('SFProDisplay-LightItalic'),
+       url('../../fonts/SFProDisplay-Light.woff') format('woff'), /* Modern Browsers */
+}
+@font-face {
+  font-family: 'SF Pro Display';
+  font-style: normal;
+  font-weight: 400;
+  src: local('SFProDisplay-Regular'), local('SFProDisplay-Regular'),
+       url('../../fonts/SFProDisplay-Regular.woff') format('woff'), /* Modern Browsers */
+}
+@font-face {
+  font-family: 'SF Pro Display';
+  font-style: normal;
+  font-weight: 600;
+  src: local('SFProDisplay-Semibold'), local('SFProDisplay-Semibold'),
+       url('../../fonts/SFProDisplay-Semibold.woff') format('woff'), /* Modern Browsers */
+}
+@font-face {
+  font-family: 'Times New Roman';
+  font-style: normal;
+  font-weight: 400;
+  src: local('TimesNewRomanPSMT'), local('TimesNewRomanPSMT'),
+       url('../../fonts/TimesNewRomanPSMT.woff') format('woff'), /* Modern Browsers */
+}

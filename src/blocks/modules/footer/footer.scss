@@ -1,0 +1,28 @@
+.footer {
+	&-wrapper {
+		margin-top: rem(60px);
+	}
+	&__list {
+		flex-wrap: wrap;
+	}
+	&__list-title {
+		font-family: $font-family-sf;
+		color: $font-color;
+		font-weight: 600;
+		font-size: rem(20px);
+		margin-bottom: rem(30px);
+	}
+	&__link {
+		font-family: $font-family-sf;
+		font-weight: 300;
+		font-size: rem(16px);
+		color: $font-color;
+		border-bottom: 1px solid $line-color-footer;
+		&:hover {
+			border-bottom: 1px solid #007bff;	
+		};
+	}
+	&__item {
+		padding-bottom: rem(18px);
+	}
+}
