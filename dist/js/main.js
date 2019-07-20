@@ -86,6 +86,26 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/blocks/modules/content/content.js":
+/*!***********************************************!*\
+  !*** ./src/blocks/modules/content/content.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// var requestURL = 'http://www.json-generator.com/api/json/get/cfafBYLgbS?indent=2';
+// var root = document.getElementById('root');
+// var request = new XMLHttpRequest();
+// request.open('GET', requestURL);
+// request.responseType = 'json';
+// request.send();
+// request.onload = function() {
+//   var root = request.response;
+//   root(request);
+// }
+
+/***/ }),
+
 /***/ "./src/blocks/modules/footer/footer.js":
 /*!*********************************************!*\
   !*** ./src/blocks/modules/footer/footer.js ***!
@@ -143,8 +163,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_header_header__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_modules_header_header__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _modules_form_form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! %modules%/form/form */ "./src/blocks/modules/form/form.js");
 /* harmony import */ var _modules_form_form__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_modules_form_form__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _modules_footer_footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! %modules%/footer/footer */ "./src/blocks/modules/footer/footer.js");
-/* harmony import */ var _modules_footer_footer__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_modules_footer_footer__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _modules_content_content__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! %modules%/content/content */ "./src/blocks/modules/content/content.js");
+/* harmony import */ var _modules_content_content__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_modules_content_content__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _modules_footer_footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! %modules%/footer/footer */ "./src/blocks/modules/footer/footer.js");
+/* harmony import */ var _modules_footer_footer__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_modules_footer_footer__WEBPACK_IMPORTED_MODULE_3__);
+
 
 
 
