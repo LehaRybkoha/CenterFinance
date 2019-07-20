@@ -7,28 +7,42 @@
         <meta name="theme-color" content="#c9e0e04d">
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <link rel="shortcut icon" href="../img/favicons/favicon.ico" type="image/x-icon">
-        <link rel="apple-touch-icon" href="../img/favicons/apple-touch-icon.png">
-        <link rel="apple-touch-icon" sizes="57x57" href="../img/favicons/apple-touch-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="../img/favicons/apple-touch-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="../img/favicons/apple-touch-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="../img/favicons/apple-touch-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="../img/favicons/apple-touch-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="../img/favicons/apple-touch-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="../img/favicons/apple-touch-icon-180x180.png">
-        <!-- React -->
-        <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
-        <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-        <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/themes/base/jquery-ui.css" type="text/css" media="all" />
         <!-- Font Awesome -->
         <script src="https://kit.fontawesome.com/38d2cab1a5.js"></script>
+
         <!-- Styles -->
-        <link rel="stylesheet" href="../styles/main.css">
+        <link rel="stylesheet" href="../styles/main.min.css">
+
         <!-- Bootstap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <!-- Hints -->
+        <script type="text/javascript">
+    var massiv = ['Как получить наличные?', 'Какие документы нужны для получения займа?', 'Под какой процент выдаются займы?'];
+    massiv.sort()
+  function down(obj) {
+    var reg = new RegExp('^' + obj.value, 'i'),
+    t = document.getElementById('podskazka');
+    t.innerHTML = '';
+    t.style.visibility = "hidden";
+    if (obj.value.length > 0)
+    for (var i = 1; i < massiv.length; i++) {
+    if (reg.test(massiv[i])) {
+    t.innerHTML = massiv[i];
+    t.style.visibility = "visible";
+    break;
+        }
+    }
+}
+function copy() {
+    var a = document.getElementById('search').value = 
+document.getElementById('podskazka').innerHTML;
+    document.getElementById('podskazka').innerHTML = '';
+    document.getElementById("podskazka").style.visibility = "hidden";
+}
+
+</script>
     </head>
     <body>
         <div class="wrapper">
@@ -37,7 +51,7 @@
 		<div class="row">
 			<div class="header-wrap">
 				<div class="logo">
-					<img src="/img/Frame.webp" alt="">
+					<img src="/img/Frame.webp" alt="logo">
 				</div>
 				<div class="header__title">
 					<h1 class="header__title-text">Вопрос Ответ</h1>
@@ -49,78 +63,110 @@
 </header>
             <section class="section__form">
 	<div class="container">	
-		<div class="form-wrapper row">
-			<form class="form">
-			  <input id="autocomplete search" class="search" type="search" placeholder="Введите вопрос" name="text">
-			  <button class="submit" type="submit"><img class="search-icon--xs" src="/img/sprites/intermediate-svg/search.svg"></img><span class="search-text">Поиск</span></button>
+			<form method="POST" name="finding" class="form">
+			  <input id="search" class="search" type="search" placeholder="Введите вопрос" name="sub" oninput="down(this)">
+			  <button class="submit" type="submit" onclick="dolt()"><img class="search-icon--xs" alt="search" src="/img/sprites/intermediate-svg/search.svg"></img><span class="search-text">Поиск</span></button>
 			  <button id="reset" class="reset" onclick="clear()" type="reset">
 			  	<i class="fas fa-times reset-icon"></i>отменить поиск</button>
+			  	<div id="hint" onclick="copy()"></div>
 			</form>
 		</div>
 	</div>
 </section>
-            
-            <ul id="root" class="search__list">
-
-            </ul>
+            <section id="content" class="content">
+	<div id="violation" class="container violation">
+		<button id="return-violation" type="button" class="return-violation" onclick=""><i class="fas fa-long-arrow-alt-left"></i> <span class="line-bottom">Назад</span></button>
+		<h2 class="violation-title">Нарушения при погашении</h2>
+		<ul id="root" class="violation__list">
+			<li class="violation__item">
+				<h3 class="violation__item-title">Я просрочил платеж</h3>
+				<p class="violation__item-desc">Подайте заявку онлайн, получите предварительное одобрение по SMS и приходите за деньгами в ближайший офис «Центрофинанс». При себе необходимо иметь паспорт (пенсионерам и военнослужащим...</p>
+				<button class="violation__item-button">Подробнее <i class="fas fa-arrow-right"></i></button>
+			</li>
+			<li class="violation__item">
+				<h3 class="violation__item-title">Какие последствия?</h3>
+				<p class="violation__item-desc">Подайте заявку онлайн, получите предварительное одобрение по SMS и приходите за деньгами в ближайший офис «Центрофинанс». При себе необходимо иметь паспорт (пенсионерам и военнослужащим...</p>
+				<button class="violation__item-button">Подробнее <i class="fas fa-arrow-right"></i></button>
+			</li>
+			<li class="violation__item">
+				<h3 class="violation__item-title">За мной уже выехали?</h3>
+				<p class="violation__item-desc">Подайте заявку онлайн, получите предварительное одобрение по SMS и приходите за деньгами в ближайший офис «Центрофинанс». При себе необходимо иметь паспорт (пенсионерам и военнослужащим...</p>
+				<button class="violation__item-button">Подробнее <i class="fas fa-arrow-right"></i></button>
+			</li>
+	    </ul>
+    </div>
+    <div id="payment" class="container payment">
+    	<button id="return-payment" type="button" class="return-payment" onclick=""><i class="fas fa-long-arrow-alt-left"></i> <span class="line-bottom">Назад</span></button>
+    	<ul class="payment__list">
+			<li class="payment__item">
+				<h2 class="payment__item-title">Почему при оплате займа в личном кабинете с меня берут комиссию?</h2>
+			</li>
+			<li class="payment__item">
+				<p class="payment__item-desc">Комиссия взимается платёжной системой за обеспечение информационного и технологического взаимодействия между клиентом и получателем платежа. Оплатить заём без комиссии можно в <span class="payment__item-desc--color">офисе компании,</span> в котором был заключен договор займа.</p>
+			</li>
+			<li class="payment__item"><img src="/img/image-payment.webp" alt="payment" class="img-fluid payment__item-img"></li>
+			<li class="payment__item">
+				<p class="payment__item-warn">Обращаем ваше внимание, что существует ограничение на сумму единовременного гашения, она не должна превышать 15000 руб с комиссией.</p>
+			</li>
+    	</ul>		
+    </div>
+</section>
         </div>
             <footer class="footer">
 	<div class="container">
 		<div class="row footer-wrapper">
 			<ul class="footer__list col-md-4">
 				<h2 class="footer__list-title">Личный кабинет</h2>
-				<li class="footer__item"><a href="" class="footer__link">Ошибки в личном кабинете</a></li>
-				<li class="footer__item"><a href="" class="footer__link">Как получить доступ в личный кабинет</a></li>
-				<li class="footer__item"><a href="" class="footer__link">Не могу зайти в личный кабинет</a></li>
-				<li class="footer__item"><a href="" class="footer__link">Ошибки в личном кабинете</a></li>
-				<li class="footer__item"><a href="" class="footer__link">Как получить доступ в личный кабинет</a></li>
-				<li class="footer__item"><a href="" class="footer__link">Не могу зайти в личный кабинет</a></li>
+				<li class="footer__item"><a href="#" class="footer__link">Ошибки в личном кабинете</a></li>
+				<li class="footer__item"><a href="#" class="footer__link">Как получить доступ в личный кабинет</a></li>
+				<li class="footer__item"><a href="#" class="footer__link">Не могу зайти в личный кабинет</a></li>
+				<li class="footer__item"><a href="#" class="footer__link">Ошибки в личном кабинете</a></li>
+				<li class="footer__item"><a href="#" class="footer__link">Как получить доступ в личный кабинет</a></li>
+				<li class="footer__item"><a href="#" class="footer__link">Не могу зайти в личный кабинет</a></li>
 			</ul>
 			<ul class="footer__list col-md-4">
 				<h2 class="footer__list-title">Погашение займа</h2>
-				<li class="footer__item"><a href="" class="footer__link">Способы погашения</a></li>
-				<li class="footer__item"><a href="" class="footer__link">Нарушения при погашении</a></li>
-				<li class="footer__item"><a href="" class="footer__link">Нужны ли поручители для полкучения займа</a></li>
-				<li class="footer__item"><a href="" class="footer__link">Нарушения при погашении</a></li>
+				<li class="footer__item"><button id="btn-payment-js"  href="#" class="footer__link" onclick="getFile('content.html')">Способы погашения</button></li>
+				<li class="footer__item"><button id="btn-violation-js"  href="#" class="footer__link" onclick="getFile('content.html')">Нарушения при погашении</button></li>
+				<li class="footer__item"><a href="#" class="footer__link">Нужны ли поручители для полкучения займа</a></li>
+				<li class="footer__item"><a href="#" class="footer__link">Нарушения при погашении</a></li>
 			</ul>
 			<ul class="footer__list col-md-4">
 				<h2 class="footer__list-title">Получение денег</h2>
-				<li class="footer__item"><a href="" class="footer__link">Не могу зайти в личный кабинет</a></li>
-				<li class="footer__item"><a href="" class="footer__link">Как получить доступ в личный кабинет</a></li>
-				<li class="footer__item"><a href="" class="footer__link">Не могу зайти в личный кабинет</a></li>
+				<li class="footer__item"><a href="#" class="footer__link">Не могу зайти в личный кабинет</a></li>
+				<li class="footer__item"><a href="#" class="footer__link">Как получить доступ в личный кабинет</a></li>
+				<li class="footer__item"><a href="#" class="footer__link">Не могу зайти в личный кабинет</a></li>
 			</ul>
 		</div>
 		<div class="row footer-wrapper">
 			<ul class="footer__list col-md-4">
 				<h2 class="footer__list-title">Личный кабинет</h2>
-				<li class="footer__item"><a href="" class="footer__link">Ошибки в личном кабинете</a></li>
-				<li class="footer__item"><a href="" class="footer__link">Как получить доступ в личный кабинет</a></li>
-				<li class="footer__item"><a href="" class="footer__link">Не могу зайти в личный кабинет</a></li>
-				<li class="footer__item"><a href="" class="footer__link">Ошибки в личном кабинете</a></li>
-				<li class="footer__item"><a href="" class="footer__link">Как получить доступ в личный кабинет</a></li>
-				<li class="footer__item"><a href="" class="footer__link">Не могу зайти в личный кабинет</a></li>
+				<li class="footer__item"><a href="#" class="footer__link">Ошибки в личном кабинете</a></li>
+				<li class="footer__item"><a href="#" class="footer__link">Как получить доступ в личный кабинет</a></li>
+				<li class="footer__item"><a href="#" class="footer__link">Не могу зайти в личный кабинет</a></li>
+				<li class="footer__item"><a href="#" class="footer__link">Ошибки в личном кабинете</a></li>
+				<li class="footer__item"><a href="#" class="footer__link">Как получить доступ в личный кабинет</a></li>
+				<li class="footer__item"><a href="#" class="footer__link">Не могу зайти в личный кабинет</a></li>
 			</ul>
 			<ul class="footer__list col-md-4">
 				<h2 class="footer__list-title">Погашение займа</h2>
-				<li class="footer__item"><a href="" class="footer__link">Способы погашения</a></li>
-				<li class="footer__item"><a href="" class="footer__link">Нарушения при погашении</a></li>
-				<li class="footer__item"><a href="" class="footer__link">Нужны ли поручители для полкучения займа</a></li>
-				<li class="footer__item"><a href="" class="footer__link">Нарушения при погашении</a></li>
+				<li class="footer__item"><a href="#" class="footer__link">Способы погашения</a></li>
+				<li class="footer__item"><a href="#" class="footer__link">Нарушения при погашении</a></li>
+				<li class="footer__item"><a href="#" class="footer__link">Нужны ли поручители для полкучения займа</a></li>
+				<li class="footer__item"><a href="#" class="footer__link">Нарушения при погашении</a></li>
 			</ul>
 			<ul class="footer__list col-md-4">
 				<h2 class="footer__list-title">Получение денег</h2>
-				<li class="footer__item"><a href="" class="footer__link">Не могу зайти в личный кабинет</a></li>
-				<li class="footer__item"><a href="" class="footer__link">Как получить доступ в личный кабинет</a></li>
-				<li class="footer__item"><a href="" class="footer__link">Не могу зайти в личный кабинет</a></li>
+				<li class="footer__item"><a href="#" class="footer__link">Не могу зайти в личный кабинет</a></li>
+				<li class="footer__item"><a href="#" class="footer__link">Как получить доступ в личный кабинет</a></li>
+				<li class="footer__item"><a href="#" class="footer__link">Не могу зайти в личный кабинет</a></li>
 			</ul>
 		</div>
 	</div>
 </footer>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js" type="text/javascript"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="../js/main.js"></script>
-        <script type="text/babel" src="js/react.jsx"></script>
+        <script src="../js/main.min.js"></script>
     </body>
 </html>

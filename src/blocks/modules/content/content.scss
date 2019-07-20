@@ -1,0 +1,83 @@
+.violation {
+	&-title {
+	font-size: rem(24px);
+	font-family: $font-family-sf;
+	color: $font-color;
+	font-weight: 600;
+	padding: rem(22px) 0 rem(32px) rem(10px);
+	border-bottom: 1px solid $line-color;
+}
+
+	&__list {
+		margin-top: rem(60px);
+	}
+
+	&__item {
+		margin-bottom: rem(65px);
+	}
+
+	&__item-title {
+		font-size: rem(20px);
+		font-weight: 600;
+		font-family: $font-family-sf;
+		color: $font-color;
+		margin-bottom: rem(28px);
+	}
+
+	&-item-desc {
+		font-size: rem(16px);
+		font-weight: 600;
+		font-family: $font-family-sf;
+		color: $font-color;
+	}
+
+	&__item-button {
+		color: #FF0142;
+		background: none !important;
+		border-bottom: 1px solid $main-color;
+		outline: none;
+	}
+}
+
+.return-violation, .return-payment {
+	color: $reset-color;
+	background: none;
+	.line-bottom {
+		border-bottom: 1px solid $reset-color;
+	}	
+}
+
+.fa-long-arrow-alt-left {
+	padding-right: rem(3px);
+}
+
+
+.payment {
+	&__item-title {
+		font-size: rem(24px);
+		font-weight: 600;
+		font-family: $font-family-sf;
+		margin: rem(45px) 0 rem(22px) 0;
+	}
+	&__item-desc {
+		font-size: rem(18px);
+		font-weight: 400;
+		font-family: $font-family-sf;
+	}
+	&__item-desc--color {
+		color: $main-color;
+		border-bottom: 1px solid $main-color;
+	}
+	&__item-img {
+		margin: rem(50px) 0;
+	}
+	&__item-warn {
+		font-size: rem(16px);
+		font-weight: 200;
+		color: $font-color;
+		font-family: $font-family-sf;
+		border: 1px solid #FFF7D9;
+		background: #FFF7D9;
+		padding: rem(20px) rem(15px);
+	}
+}

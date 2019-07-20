@@ -101,3 +101,28 @@
 input.search::placeholder {
 	color: $search-color;
 };
+
+
+#hint
+{  
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 3px;
+    font-family: Arial;
+    font-weight: normal;
+    color: $font-color;
+    font-size: rem(14px);
+    font-weight: 600;
+    font-family: $font-family-sf;
+    line-height: 1.2;
+    margin: 0;
+
+   visibility: hidden;
+   position: relative;
+   top: 0px;
+   width: 248px;
+   height: 27px;
+   z-index: 9999;
+   cursor: pointer !important;
+}

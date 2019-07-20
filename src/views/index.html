@@ -7,44 +7,53 @@
         <meta name="theme-color" content="#c9e0e04d">
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <link rel="shortcut icon" href="../img/favicons/favicon.ico" type="image/x-icon">
-        <link rel="apple-touch-icon" href="../img/favicons/apple-touch-icon.png">
-        <link rel="apple-touch-icon" sizes="57x57" href="../img/favicons/apple-touch-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="../img/favicons/apple-touch-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="../img/favicons/apple-touch-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="../img/favicons/apple-touch-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="../img/favicons/apple-touch-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="../img/favicons/apple-touch-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="../img/favicons/apple-touch-icon-180x180.png">
-        <!-- React -->
-        <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
-        <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-        <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/themes/base/jquery-ui.css" type="text/css" media="all" />
         <!-- Font Awesome -->
         <script src="https://kit.fontawesome.com/38d2cab1a5.js"></script>
+
         <!-- Styles -->
         <link rel="stylesheet" href="../styles/main.css">
+
         <!-- Bootstap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <!-- Hints -->
+        <script type="text/javascript">
+    var massiv = ['Как получить наличные?', 'Какие документы нужны для получения займа?', 'Под какой процент выдаются займы?'];
+    massiv.sort()
+  function down(obj) {
+    var reg = new RegExp('^' + obj.value, 'i'),
+    t = document.getElementById('podskazka');
+    t.innerHTML = '';
+    t.style.visibility = "hidden";
+    if (obj.value.length > 0)
+    for (var i = 1; i < massiv.length; i++) {
+    if (reg.test(massiv[i])) {
+    t.innerHTML = massiv[i];
+    t.style.visibility = "visible";
+    break;
+        }
+    }
+}
+function copy() {
+    var a = document.getElementById('search').value = 
+document.getElementById('podskazka').innerHTML;
+    document.getElementById('podskazka').innerHTML = '';
+    document.getElementById("podskazka").style.visibility = "hidden";
+}
+
+</script>
     </head>
     <body>
         <div class="wrapper">
             @@include("../blocks/modules/header/header.html")
             @@include("../blocks/modules/form/form.html")
             @@include("../blocks/modules/content/content.html")
-            <ul id="root" class="search__list">
-
-            </ul>
         </div>
             @@include("../blocks/modules/footer/footer.html")
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js" type="text/javascript"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="../js/main.js"></script>
-        <script type="text/babel" src="js/react.jsx"></script>
     </body>
 </html>
