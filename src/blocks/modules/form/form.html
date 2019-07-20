@@ -2,9 +2,10 @@
 	<div class="container">	
 		<div class="form-wrapper row">
 			<form class="form">
-			  <input class="search" type="search" placeholder="Введите вопрос" name="text">
-			  <input class="submit" type="submit" value="Поиск">
-			  <button onclick="clear()" type="reset">отменить поиск</button>
+			  <input id="search" class="search" type="search" placeholder="Введите вопрос" name="text">
+			  <button class="submit" type="submit"><img class="search-icon--xs" src="/img/sprites/intermediate-svg/search.svg"></img><span class="search-text">Поиск</span></button>
+			  <button id="reset" class="reset" onclick="clear()" type="reset">
+			  	<i class="fas fa-times reset-icon"></i>отменить поиск</button>
 			</form>
 		</div>
 	</div>

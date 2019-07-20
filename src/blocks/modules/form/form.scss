@@ -9,7 +9,7 @@
 	position: relative;
 	&-wrapper {
 		position: relative;
-		height: 80px;
+		height: 85px;
 	}
 }
 
@@ -22,11 +22,10 @@
 	font-weight: 600;
 	font-size: rem(16px);
 	padding: rem(11.5px) rem(40px);
+	@include xs(padding, rem(7px) rem(27px));
+	@include md(padding, rem(11.5px) rem(40px));
 	border-radius: 4px;
 	margin-left: -10px;
-	&:hover {
-		background-color: green;
-	};
 }
 
 .search {
@@ -40,29 +39,63 @@
 	border: 1px solid $search-color;
     padding-left: rem(20px);
 	border-radius: 5px;
-	@include xs(min-width, rem(280px));
+	@include xs(min-height, rem(34px));
+	@include md(min-height, rem(46px));
+	@include xs(min-width, rem(200px));
+	@include sm(min-width, rem(280px));
 	@include md(min-width, rem(330px));
 	&::-webkit-search-cancel-button {
 		-webkit-appearance: none;
-		// width: 15px;
-		// height: 15px;
-		// background: url(/img/sprites/intermediate-svg/cancel.svg) no-repeat;
-		// position: absolute;
-		// top: 40px;
-
-	};
+	}
+	&-icon--xs {
+		display: none;
+		@include xs(display, block);
+		@include md(display, none);
+	}
+	&-text {
+		@include xs(display, none);
+		@include md(display, block);
+	}
 }
 
 .reset {
+	display: none;
+	font-family: $font-family-sf;
+	font-weight: 400;
+	font-size: rem(14px);
 	background: none;
 	color: $reset-color;
 	position: absolute;
 	left: 0;
 	top: 55px;
 	text-transform: lowercase;
+	border-bottom: 1px solid $line-color-footer;
+	padding: 0;
+	&:hover{
+		color: #007bff;
+		border-bottom: 1px solid #007bff;
+		.reset-icon {
+			color: #007bff;
+		}
+	};
+	&::after {
+		content: ' ';
+		display: block;
+		background-color: #fff;
+		height: 15px;
+		width: 21px;
+		position: absolute;
+		left: 0;
+		top: 20px;
+		z-index: 100;
+	};
 	&:focus {
 		outline: none;
 	};
+	&-icon {
+		padding: 5px;
+		font-size: rem(14px);
+	}
 }
 
 input.search::placeholder {

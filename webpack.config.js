@@ -1,4 +1,6 @@
 const path = require("path");
+const CopyPlugin = require('copy-webpack-plugin');
+const json = require('./src/requests.json');
 
 module.exports = {
     entry: {
@@ -12,7 +14,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.jsx|js$/,
                 exclude: /node_modules/,
                 use: {
                     loader: require.resolve("babel-loader"),
@@ -22,6 +24,10 @@ module.exports = {
                         ]
                     }
                 }
+            },
+            {
+                test: /\.json$/,
+                loader: 'json-loader'
             }
         ]
     },
@@ -30,5 +36,10 @@ module.exports = {
         alias: {
             "%modules%": path.resolve(__dirname, "src/blocks/modules")
         }
-    }
+    },
+  plugins: [
+    new CopyPlugin([
+      { from: './src/views/react.jsx', to: 'react.jsx' },
+    ]),
+  ],
 };
