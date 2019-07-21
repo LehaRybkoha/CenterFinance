@@ -1,6 +1,5 @@
 const path = require("path");
-const CopyPlugin = require('copy-webpack-plugin');
-const json = require('./src/requests.json');
+// const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -14,21 +13,18 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.jsx|js$/,
+                test: /\.js|jsx$/,
                 exclude: /node_modules/,
                 use: {
                     loader: require.resolve("babel-loader"),
                     query: {
                         presets: [
+
                             ["@babel/preset-env", { modules: false }]
                         ]
                     }
                 }
             },
-            {
-                test: /\.json$/,
-                loader: 'json-loader'
-            }
         ]
     },
 
@@ -37,9 +33,12 @@ module.exports = {
             "%modules%": path.resolve(__dirname, "src/blocks/modules")
         }
     },
-  plugins: [
-    new CopyPlugin([
-      { from: './src/views/react.jsx', to: 'react.jsx' },
-    ]),
-  ],
+//   plugins: [
+//     new CopyPlugin([
+//       { from: './src/blocks/modules/search/import.js', to: './search' },
+//       { from: './src/blocks/modules/search/search.js', to: './search' },
+//       { from: './src/blocks/modules/search/inner.js', to: './search' },
+//       { from: './src/blocks/modules/search/data.js', to: './search' },
+//     ]),
+//   ],
 };

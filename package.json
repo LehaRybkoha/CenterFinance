@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/preset-env": "^7.4.3",
     "@babel/register": "^7.4.0",
     "babel-core": "^6.26.3",
@@ -69,8 +70,13 @@
     "yargs": "^12.0.5"
   },
   "dependencies": {
+    "@babel/preset-react": "^7.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "fuzzyjs": "^4.0.3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "smart-grid": "^2.1.2"
+    "react-router-dom": "^5.0.1",
+    "smart-grid": "^2.1.2",
+    "webpack-cli": "^3.3.6"
   }
 }

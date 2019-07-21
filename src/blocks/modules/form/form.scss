@@ -1,128 +1,85 @@
 .section__form {
-	margin: rem(40px) 0 0 0;
+    margin: rem(40px) 0 0 0;
 }
 
 .form {
-	padding: 0;
-	white-space: nowrap;
-	@include xs(margin-left, rem(23.3px));
-	position: relative;
-	&-wrapper {
-		position: relative;
-		height: 85px;
-	}
+    @include xs(margin-left, rem(15px));
+    position: relative;
+    padding: 0;
+    &-wrapper {
+        white-space: nowrap;
+    }
 }
 
 .submit {
-	display: inline-block;
-	position: absolute;
-	color: #fff;
-	background-color: $main-color;
-	font-family: $font-family-sf;
-	font-weight: 600;
-	font-size: rem(16px);
-	padding: rem(11.5px) rem(40px);
-	@include xs(padding, rem(7px) rem(27px));
-	@include md(padding, rem(11.5px) rem(40px));
-	border-radius: 4px;
-	margin-left: -10px;
+    @include xs(padding, rem(7px) rem(27px));
+    @include md(padding, rem(11.5px) rem(40px));
+    display: inline-block;
+    position: absolute;
+    color: #fff;
+    background-color: $main-color;
+    font-family: $font-family-sf;
+    font-weight: 600;
+    font-size: rem(16px);
+    padding: rem(11.5px) rem(40px);
+    border-radius: 4px;
+    margin-left: -10px;
 }
 
 .search {
-	display: inline-block;
-	color: $font-color;
-	font-size: rem(16px);
-	font-weight: 300;
-	font-family: $font-family-sf;
-	min-width: rem(330px);
-	min-height: rem(46px);
-	border: 1px solid $search-color;
+    @include font-styles;
+    @include xs(min-height, rem(34px));
+    @include md(min-height, rem(46px));
+    @include xs(min-width, rem(200px));
+    @include sm(min-width, rem(280px));
+    @include md(min-width, rem(330px));
+    display: inline-block;
+    font-size: rem(16px);
+    font-weight: 300;
+    min-width: rem(330px);
+    min-height: rem(46px);
+    border: 1px solid $search-color;
     padding-left: rem(20px);
-	border-radius: 5px;
-	@include xs(min-height, rem(34px));
-	@include md(min-height, rem(46px));
-	@include xs(min-width, rem(200px));
-	@include sm(min-width, rem(280px));
-	@include md(min-width, rem(330px));
-	&::-webkit-search-cancel-button {
-		-webkit-appearance: none;
-	}
-	&-icon--xs {
-		display: none;
-		@include xs(display, block);
-		@include md(display, none);
-	}
-	&-text {
-		@include xs(display, none);
-		@include md(display, block);
-	}
+    border-radius: 5px;
+    &::-webkit-search-cancel-button {
+        -webkit-appearance: none;
+    }
+    &-icon--xs {
+        @include xs(display, block);
+        @include md(display, none);
+        display: none;
+    }
+    &-text {
+        @include xs(display, none);
+        @include md(display, block);
+    }
 }
 
 .reset {
-	display: none;
-	font-family: $font-family-sf;
-	font-weight: 400;
-	font-size: rem(14px);
-	background: none;
-	color: $reset-color;
-	position: absolute;
-	left: 0;
-	top: 55px;
-	text-transform: lowercase;
-	border-bottom: 1px solid $line-color-footer;
-	padding: 0;
-	&:hover{
-		color: #007bff;
-		border-bottom: 1px solid #007bff;
-		.reset-icon {
-			color: #007bff;
-		}
-	};
-	&::after {
-		content: ' ';
-		display: block;
-		background-color: #fff;
-		height: 15px;
-		width: 21px;
-		position: absolute;
-		left: 0;
-		top: 20px;
-		z-index: 100;
-	};
-	&:focus {
-		outline: none;
-	};
-	&-icon {
-		padding: 5px;
-		font-size: rem(14px);
-	}
+    display: none;
+    position: absolute;
+    top: 55px;
+    left: 0;
+    padding: 0;
+    font-family: $font-family-sf;
+    font-weight: 400;
+    font-size: rem(14px);
+    background: none;
+    color: $reset-color;
+    text-transform: lowercase;
+	
+    &:focus {
+        outline: none;
+    }
+    &-text--style {
+        border-bottom: 1px solid $line-color-footer;
+    }
+    &-icon {
+        padding: 5px;
+        font-size: rem(14px);
+    }
 }
 
 input.search::placeholder {
-	color: $search-color;
-};
-
-
-#hint
-{  
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   border-radius: 3px;
-    font-family: Arial;
-    font-weight: normal;
-    color: $font-color;
-    font-size: rem(14px);
-    font-weight: 600;
-    font-family: $font-family-sf;
-    line-height: 1.2;
-    margin: 0;
-
-   visibility: hidden;
-   position: relative;
-   top: 0px;
-   width: 248px;
-   height: 27px;
-   z-index: 9999;
-   cursor: pointer !important;
+    color: $search-color;
 }

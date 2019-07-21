@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/bin/node /usr/share/yarn/bin/yarn.js add json-loader --dev
+  /usr/bin/node /usr/share/yarn/bin/yarn.js add react-router-dom --save
 
 PATH: 
   /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
@@ -14,7 +14,7 @@ Platform:
   linux x64
 
 Trace: 
-  Error: EACCES: permission denied, rmdir '/home/aleksei/Рабочий стол/projects/CenterFinance/node_modules/.cache/@babel'
+  Error: EACCES: permission denied, unlink '/home/aleksei/Рабочий стол/projects/CenterFinance/node_modules/.bin/acorn'
 
 npm manifest: 
   {
@@ -78,6 +78,7 @@ npm manifest:
       "imagemin-pngquant": "^7.0.0",
       "imagemin-webp": "^5.0.0",
       "imagemin-zopfli": "^6.0.0",
+      "json-loader": "^0.5.7",
       "require-dir": "^1.2.0",
       "stylelint": "^10.0.1",
       "stylelint-order": "^3.0.0",
@@ -87,6 +88,7 @@ npm manifest:
       "yargs": "^12.0.5"
     },
     "dependencies": {
+      "fuzzyjs": "^4.0.3",
       "react": "^16.8.6",
       "react-dom": "^16.8.6",
       "smart-grid": "^2.1.2"
@@ -5342,6 +5344,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/function-bind/-/function-bind-1.1.1.tgz#a56899d3ea3c9bab874bb9773b7c5ede92f4895d"
     integrity sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==
   
+  fuzzyjs@^4.0.3:
+    version "4.0.3"
+    resolved "https://registry.yarnpkg.com/fuzzyjs/-/fuzzyjs-4.0.3.tgz#8de44f37cdfe05ebee197496dbdd2fc87db6047a"
+    integrity sha512-/QEZMkAcC96UxBDE6Bal4Fdb4EbxjhXLZB+jvbwiNeLWMjN1eoqsKv/25iMJddAfL5LUpTBSg4Vp2rci6VLS/A==
+  
   gauge@~2.7.3:
     version "2.7.4"
     resolved "https://registry.yarnpkg.com/gauge/-/gauge-2.7.4.tgz#2c03405c7538c39d7eb37b317022e325fb018bf7"
@@ -7234,6 +7241,11 @@ Lockfile:
     version "3.0.0"
     resolved "https://registry.yarnpkg.com/json-buffer/-/json-buffer-3.0.0.tgz#5b1f397afc75d677bde8bcfc0e47e1f9a3d9a898"
     integrity sha1-Wx85evx11ne96Lz8Dkfh+aPZqJg=
+  
+  json-loader@^0.5.7:
+    version "0.5.7"
+    resolved "https://registry.yarnpkg.com/json-loader/-/json-loader-0.5.7.tgz#dca14a70235ff82f0ac9a3abeb60d337a365185d"
+    integrity sha512-QLPs8Dj7lnf3e3QYS1zkCo+4ZwqOiF9d/nZnYozTISxXWCfNs9yuky5rJw4/W34s7POaNlbZmQGaB5NiXCbP4w==
   
   json-parse-better-errors@^1.0.1, json-parse-better-errors@^1.0.2:
     version "1.0.2"
